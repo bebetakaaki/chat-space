@@ -30,14 +30,14 @@ Things you may want to cover:
 |------|----|-------|
 |name|string|null: false|
 ### Association
-- has_many :account, through:account_groups
+- has_many :accounts, through:account_groups
 - has_many :account_groups
 - has_many :chats
 
 ## chatテーブル
 |Column|Type|Options|
 |------|----|-------|
-|text|text|null: false|
+|text|text|
 |image|text||
 |account_id|reference|foreign_key: true|
 |group_id|reference|foreign_key: true|
