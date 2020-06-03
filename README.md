@@ -13,36 +13,46 @@ Things you may want to cover:
 
 * Database creation
 
-## new_accountテーブル
+## accountテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false|
-|email|string|null: false|
+|name|string|null: false,index|
+|email|string|null: false,NOT NULL|
 |password|string|null: false|
 |again-password|string|null: false|
 ### Association
-- has_many :group_create
+- has_many :group
 - has_many :chat
 
-## group_createテーブル
+## groupテーブル
 |Column|Type|Options|
 |------|----|-------|
-|group_name|integer|null: false|
-|chat_member|integer|null: false, foreign_key: true|
-|new_account_id|integer|null: false, foreign_key: true|
+|group_name|string|null: false|
+|chat_member|string|null: false, foreign_key: true|
+|account_id|integer|null: false, foreign_key: true|
 ### Association
-- belongs_to :new_account
+- belongs_to :account
 - has_many :chat
 
 ## chatテーブル
 |Column|Type|Options|
 |------|----|-------|
 |text|text|null: false|
-|new_account_id|integer|null: false, foreign_key: true|
-|group_create_id|integer|null: false, foreign_key: true|
+|account_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
 ### Association
-- belongs_to :new_account
-- belongs_to :group_create
+- belongs_to :account
+- belongs_to :group
+
+## account_groupテーブル
+|Column|Type|Options|
+|------|----|-------|
+|account_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
+### Association
+- belongs_to :account
+- belongs_to :group
+
 
 
 * Database initialization
