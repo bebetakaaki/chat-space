@@ -21,8 +21,8 @@ Things you may want to cover:
 |password|string|null: false|
 |again-password|string|null: false|
 ### Association
-- has_many :groups, through:account_group
-- has_many :account_group
+- has_many :groups, through:account_groups
+- has_many :account_groups
 - has_many :chats
 
 ## groupテーブル
@@ -30,8 +30,8 @@ Things you may want to cover:
 |------|----|-------|
 |name|string|null: false|
 ### Association
-- belongs_to :account, through:account_group
-- has_many :account_group
+- has_many :account, through:account_groups
+- has_many :account_groups
 - has_many :chats
 
 ## chatテーブル
@@ -50,7 +50,6 @@ Things you may want to cover:
 |------|----|-------|
 |account_id|reference|foreign_key: true|
 |group_id|reference|foreign_key: true|
-
 ### Association
 - belongs_to :account
 - belongs_to :group
