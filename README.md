@@ -39,8 +39,8 @@ Things you may want to cover:
 |------|----|-------|
 |text|text|
 |image|text||
-|account_id|reference|foreign_key: true|
-|group_id|reference|foreign_key: true|
+|account_id|reference|null: false,foreign_key: true|
+|group_id|reference|null: false,foreign_key: true|
 ### Association
 - belongs_to :account
 - belongs_to :group
@@ -48,8 +48,8 @@ Things you may want to cover:
 ## account_groupテーブル
 |Column|Type|Options|
 |------|----|-------|
-|account_id|reference|foreign_key: true|
-|group_id|reference|foreign_key: true|
+|account_id|reference|null: false,foreign_key: true|
+|group_id|reference|null: false,foreign_key: true|
 ### Association
 - belongs_to :account
 - belongs_to :group
