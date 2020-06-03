@@ -16,30 +16,31 @@ Things you may want to cover:
 ## accountテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false,index|
-|email|string|null: false,NOT NULL|
+|name|string|null: false, index true|
+|email|string|null: false|
 |password|string|null: false|
 |again-password|string|null: false|
 ### Association
-- has_many :group
-- has_many :chat
+- has_many :groups, through:account_group
+- has_many :account_group
+- has_many :chats
 
 ## groupテーブル
 |Column|Type|Options|
 |------|----|-------|
-|group_name|string|null: false|
-|chat_member|string|null: false, foreign_key: true|
-|account_id|integer|null: false, foreign_key: true|
+|name|string|null: false|
 ### Association
-- belongs_to :account
-- has_many :chat
+- belongs_to :account, through:account_group
+- has_many :account_group
+- has_many :chats
 
 ## chatテーブル
 |Column|Type|Options|
 |------|----|-------|
 |text|text|null: false|
-|account_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
+|image|text||
+|account_id|reference|foreign_key: true|
+|group_id|reference|foreign_key: true|
 ### Association
 - belongs_to :account
 - belongs_to :group
@@ -47,8 +48,9 @@ Things you may want to cover:
 ## account_groupテーブル
 |Column|Type|Options|
 |------|----|-------|
-|account_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
+|account_id|reference|foreign_key: true|
+|group_id|reference|foreign_key: true|
+
 ### Association
 - belongs_to :account
 - belongs_to :group
