@@ -1,0 +1,31 @@
+.chat-main
+  .chat-main__info
+    .chat-main__info__left
+      test
+      .chat-main__info__left__left2
+        Member: masa;
+    .chat-main__right
+      <a href="#">Edit</a>
+  .chat-main__comment
+    .chat-main__tweet
+      masa 
+      .chat-main__tweet__day
+        2019/11/20(Web) 17:43:01
+        .chat-main__tweet__day__hello
+          おはよう！
+          .chat-main__tweet
+    .chat-main__tweet2
+      masa 
+      .chat-main__tweet2__day2
+        2019/11/20(Web) 17:43:34
+        .chat-main__tweet2__day2__hello2
+          今日は夜から雨
+          .chat-main__tweet2
+  .chat-main__form
+    %form.new_message
+      .input-box
+        %input{type: "text",class: "input-box__text",placeholder: "type a message"}
+        %label{class: "input-box__image"}
+          =icon('fas','image')
+          %input{type: "file",class: "input-box__image__file"}
+      %input{type: "submit",class: "submit-btn"}
