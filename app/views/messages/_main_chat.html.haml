@@ -1,31 +1,48 @@
 .chat-main
   .chat-main__info
     .chat-main__info__left
-      test
+      = @group.name
       .chat-main__info__left__left2
-        Member: masa;
+        - @group.users.each do |user| 
+          = user.name
     .chat-main__right
-      <a href="#">Edit</a>
-  .chat-main__comment
-    .chat-main__tweet
-      masa 
-      .chat-main__tweet__day
-        2019/11/20(Web) 17:43:01
-        .chat-main__tweet__day__hello
-          おはよう！
-          .chat-main__tweet
-    .chat-main__tweet2
-      masa 
-      .chat-main__tweet2__day2
-        2019/11/20(Web) 17:43:34
-        .chat-main__tweet2__day2__hello2
-          今日は夜から雨
-          .chat-main__tweet2
+      =link_to "edit",edit_group_path(@group)
+
+  .messages
+    = render @messages
+
+  -# .chat-main__comment
+  -#   = link_to "#" do
+  -#     .chat-main__tweet
+  -#       masa 
+  -#       .chat-main__tweet__day
+  -#         2019/11/20(Web) 17:43:01
+  -#         .chat-main__tweet__day__hello
+  -#           おはよう！
+  -#           .chat-main__tweet
+    
+    -# .chat-main__tweet2
+    -#   masa 
+    -#   .chat-main__tweet2__day2
+    -#     2019/11/20(Web) 17:43:34
+    -#     .chat-main__tweet2__day2__hello2
+    -#       今日は夜から雨
+    -#       .chat-main__tweet2
+  
+  -# .chat-main__form
+  -#   %form.new_message
+  -#     .input-box
+  -#       %input{type: "text",class: "input-box__text",placeholder: "type a message"}
+  -#       %label{class: "input-box__image"}
+  -#         =icon('fas','image')
+  -#         %input{type: "file",class: "input-box__image__file"}
+  -#     %input{type: "submit",class: "submit-btn"}
+
   .chat-main__form
-    %form.new_message
+    = form_with model: [@group, @message], html: {class: "new_message"}, local: true do |f|
       .input-box
-        %input{type: "text",class: "input-box__text",placeholder: "type a message"}
-        %label{class: "input-box__image"}
-          =icon('fas','image')
-          %input{type: "file",class: "input-box__image__file"}
-      %input{type: "submit",class: "submit-btn"}
+        = f.text_field :content, class: 'input-box__text', placeholder: 'type a message'
+        = f.label :image, class: 'input-box__image' do
+          = icon('far', 'image', class: '')
+          = f.file_field :image, class: 'input-box__image__file'
+      = f.submit 'Send', class: 'submit-btn'

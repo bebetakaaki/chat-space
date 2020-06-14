@@ -45,17 +45,20 @@
   }
   .side-bar__list{
     height: calc(100vh - 100px);
-    width: 300px;
-    .side-bar__chart{
-      padding: 20px 20px 40px 20px;
-      color: #ffffff;
-      .side-bar__member{
-        font-size: 15px;
-      }
-      .side-bar__message{
-        font-size: 11px;
-        padding-top: 5px;
-      }
+    background-color: #2f3e51;
+    overflow: scroll;
+      // .side-bar__list a{
+      //   color: white;
+      // }
+        .side-bar__chart{
+          padding: 20px 20px 40px 20px;
+          color: #ffffff;
+          .side-bar__member{
+            font-size: 15px;
+          }
+          .side-bar__message{
+            font-size: 11px;
+          }
     }
  }
 }
@@ -94,39 +97,49 @@
     }
 }
 
-.chat-main__comment{
-  height: calc(100vh -  190px);
+.messages{
+  height: calc(100vh - 190px);
+  padding: 23px 20px;
   background-color: #fafafa;
-  .chat-main__tweet{
-    padding-left: 40px;
-    color: #333333;
-    display: flex;
-    &__day{
-      color: #999999;
-      font-size: 12px;
-      margin-left: 10px;
-      &__hello{
-        font-size: 14px;
-        color: #434A54;
-        margin: 12px 0 46px -50px;
-      }
+  overflow: scroll;
+    .message{
+      padding-bottom: 40px;
+        .message__upper-info{
+          display: flex;
+          margin-bottom: 10px;
+          &__talker{
+            font-size: 16px;
+            color: #434A54;
+            font-weight: bold;
+            // margin: 12px 0 46px -50px;
+            &__data{
+            color: #999999;
+            font-size: 12px;
+            margin-left: 10px;
+            }
+          }
+        }
+        .ifmessages{
+          .ifmessages__text{
+            color: #434a54;
+            font-size: 14px;
+            margin-bottom: 10px;
+          }
+        }
+        // .chat-main__tweet2{
+        //   padding-left: 40px;
+        //   color: #333333;
+        //   display: flex;
+        //   &__day2{
+        //     color: #999999;
+        //     font-size: 12px;
+        //     margin-left: 10px;
+        //     &__hello2{
+        //       font-size: 14px;
+        //       color: #434A54;
+        //       margin: 12px 0 46px -50px;
+        //     }
     }
-  }
-  .chat-main__tweet2{
-    padding-left: 40px;
-    color: #333333;
-    display: flex;
-    &__day2{
-      color: #999999;
-      font-size: 12px;
-      margin-left: 10px;
-      &__hello2{
-        font-size: 14px;
-        color: #434A54;
-        margin: 12px 0 46px -50px;
-      }
-    }
-  }
 }
 
 .chat-main__form{
