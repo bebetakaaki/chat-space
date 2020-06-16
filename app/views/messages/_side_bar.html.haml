@@ -12,7 +12,7 @@
   .side-bar__list
     - current_user.groups.each do |group|
       .side-bar__chart
-        = link_to group_messages_path(group) do
+        = link_to group_messages_path(group),class: "chart__edit" do
           .side-bar__member
             = group.name
           .side-bar__message
