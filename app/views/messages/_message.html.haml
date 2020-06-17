@@ -1,12 +1,11 @@
-.messages
-  .message
-    .message__upper-info
-      .message__upper-info__talker
-        = message.user.name
-      .message__upper-info__talker__data
-        = message.created_at.strftime("%Y年%m月%d日 %H時%M分")
-    .ifmessages
-      - if message.content.present?
-        %p.ifmessages__text
-          = message.content
-        = image_tag message.image.url, class: 'Message__image' if message.image.present?
+.message
+  .message__upper-info
+    .message__upper-info__talker
+      = message.user.name
+    .message__upper-info__talker__data
+      = message.created_at.strftime("%Y年%m月%d日 %H時%M分")
+  .ifmessages
+    - if message.content.present?
+      %p.ifmessages__text
+        = message.content
+      = image_tag message.image.url, class: 'message__image' if message.image.present?

@@ -11,6 +11,7 @@
   background-color: #fafafa;
 }
 
+
 .side-bar__group {
   width: 300px;
   background-color: #2f3e51;  
@@ -50,17 +51,22 @@
       // .side-bar__list a{
       //   color: white;
       // }
-        .side-bar__chart{
-          padding: 20px 20px 40px 20px;
-          color: #ffffff;
-          .side-bar__member{
-            font-size: 15px;
-          }
-          .side-bar__message{
-            font-size: 11px;
-          }
+    .side-bar__chart{
+      padding: 20px 20px 40px 20px;
+      color: #ffffff;
+      .chart__edit{
+        text-decoration: none;
+      }
+      .side-bar__member{
+        font-size: 15px;
+        color: #ffffff;
+      }
+      .side-bar__message{
+        font-size: 11px;
+        color: #ffffff;
+      }
     }
- }
+  }
 }
 
 .chat-main__info {
