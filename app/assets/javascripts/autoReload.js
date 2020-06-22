@@ -76,5 +76,5 @@ $(function(){
       alert('エラー');
     });
   };
-  setInterval(reloadMessages, 20000);
+  setInterval(reloadMessages, 7000);
 });
