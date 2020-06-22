@@ -3,10 +3,12 @@
     .chat-main__info__left
       = @group.name
       .chat-main__info__left__left2
+        Membar
         - @group.users.each do |user| 
           = user.name
     .chat-main__right
-      =link_to "edit",edit_group_path(@group)
+      =link_to edit_group_path(@group) do
+        Edit
 
   .messages
     = render @messages

@@ -92,13 +92,14 @@
     .chat-main__right{
       display: block;
       border: 1px solid #38AEF0;
-      color: #38AEF0;
       height: 40px;
       line-height: 40px;
       margin: 28px 40px;
       padding: 0 20px;
-      a{
+      a {
+        color: #38AEF0;
         text-decoration: none;
+
       }
     }
 }
